@@ -1,0 +1,22 @@
+{
+  "name": "murder_project",
+  "description": "A project looking at Homicide data in the U.S",
+  "main": "index.js",
+  "authors": [
+    "Mike Cuddy"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/ravenusmc/murder_project",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+    "dependencies": {
+        "bootstrap": "~3.3.2",
+        "jquery": "~2.1.3",
+        "react": "~0.12.2"
+  }
+}

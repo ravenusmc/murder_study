@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div id="content"></div>
+
+<script src="{{ url_for('static', filename='./bower_components/react/react.min.js') }}"></script>
+<script src="{{ url_for('static', filename='./bower_components/react/JSXTransformer.js') }}"></script>
+
+<script type="text/jsx">
+
+  var HelloWorld = React.createClass({
+    render: function () {
+      return (
+        <p>Hello, World, Mike</p>
+      );
+    }
+  });
+
+  React.render(
+    <HelloWorld/>,
+    document.getElementById('content')
+  );
+</script>
+
+{% endblock %}
