@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<div id="content"></div>
+<div id="container"></div>
 
 <script src="{{ url_for('static', filename='./bower_components/react/react.min.js') }}"></script>
 <script src="{{ url_for('static', filename='./bower_components/react/JSXTransformer.js') }}"></script>
@@ -12,14 +12,41 @@
   var HelloWorld = React.createClass({
     render: function () {
       return (
-        <p>Hello, World, Mike</p>
+        <div className='main_div'>
+            <SectionOne/>
+            <SectionTwo/>
+        </div>
+
       );
     }
   });
 
+  var SectionOne = React.createClass({
+      render: function() {
+          return (
+              <div className='sectionOne'>
+                <div className='login_heading'>
+                    <h1>Examining Murder in the U.S.</h1>
+                </div>
+              </div>
+          )
+      }
+  })
+
+  var SectionTwo = React.createClass({
+      render: function() {
+          return (
+              <div className='sectionTwo'>
+                <h1>Hello ME</h1>
+              </div>
+          )
+      }
+  })
+
+
   React.render(
     <HelloWorld/>,
-    document.getElementById('content')
+    document.getElementById('container')
   );
 </script>
 
