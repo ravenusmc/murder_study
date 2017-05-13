@@ -1,5 +1,5 @@
 #importing outside libraries for use in the project
-from flask import Flask, session, redirect, url_for, escape, render_template, request, flash
+from flask import Flask, session, jsonify, redirect, url_for, escape, render_template, request, flash
 
 #importing files that I made for the program
 from client import *
@@ -56,6 +56,20 @@ def index():
     if 'username' not in session:
         return redirect(url_for('login'))
     return render_template('index.html', title="Home Page")
+
+@app.route('/_by_year')
+def by_year():
+    print("IN FUNCTION")
+    a = request.args.get('a', 0, type=int)
+    b = 3
+    print(a)
+    return jsonify(result=a + b)
+
+@app.route('/_add_numbers')
+def add_numbers():
+    a = request.args.get('a', 0, type=int)
+    b = request.args.get('b', 0, type=int)
+    return jsonify(result=a + b)
 
 #This function is what will log out the user.
 @app.route('/sign_out')

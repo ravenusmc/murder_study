@@ -124,7 +124,6 @@ ul li a {
 
 .area_two {
     flex: 5;
-    font-size: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,7 +132,6 @@ ul li a {
 /* CSS for third section */
 .area_one_third {
     flex: 5;
-    font-size: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
