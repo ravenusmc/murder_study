@@ -8,7 +8,7 @@ footer {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: rgba(218, 223, 232, 0.9);
+  border-top: 3px solid black;
 }
 
 /* CSS For Login Page */
@@ -90,7 +90,7 @@ footer {
 
 .nav_bar {
     flex: 5;
-    font-size: 55px;
+    font-size: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,6 +112,44 @@ ul li a {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+/* CSS for second section */
+.area_one {
+    flex: 5;
+    background-image: url(https://source.unsplash.com/biUw5Nf4Ex8);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.area_two {
+    flex: 5;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CSS for third section */
+.area_one_third {
+    flex: 5;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.area_two_third {
+    flex: 5;
+    background-image: url(https://source.unsplash.com/50XN7cidjCc);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+
 
 @media only all and (max-width: 768px){
 
