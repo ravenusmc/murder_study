@@ -14,6 +14,19 @@ class User():
         self.db.users = self.db.users #Creating a users collection within the titanic DB
         self.username = username
 
+    #This method will encrypt the password
+    def encrypt_pass(self, password):
+        password = password.encode('utf-8')
+        hashed = bcrypt.hashpw(password, bcrypt.gensalt())
+        return password, hashed
+
+    #This method will add a new member to the database.
+    def add(self, username, password):
+        self.db.users.insert_one({
+            "username": username,
+            "password": password
+        })
+
     #This method will see if the user is actual user of the site.
     def check(self, username, password):
         #I first encode the password to utf-8

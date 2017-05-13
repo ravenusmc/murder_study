@@ -31,7 +31,28 @@ def login():
 
 @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
+    if request.method == 'POST':
+        #Getting the correct data from the form that was submitted.
+        username = request.form['username']
+        password = request.form['password']
+        password_check = request.form['second_password']
+        #using a flash message to ensure that the first and second passwords match.
+        if password != password_check:
+            flash('The Passwords must match')
+            return redirect(url_for('sign_up'))
+        #Creating the object that will represent the user.
+        user = User(username)
+        #Encrypting the password
+        password, hashed = user.encrypt_pass(password)
+        #Adding the user to the database
+        user.add(username, hashed)
+        #Letting them into the index Page
+        return redirect(url_for('index'))
     return render_template('sign_up.html', title='Sign Up Page')
+
+@app.route('/index')
+def index():
+    return render_template('index.html', title="Home Page")
 
 # set the secret key. keep this really secret:
 app.secret_key = 'n3A\xef(\xb0Cf^\xda\xf7\x97\xb1x\x8e\x94\xd5r\xe0\x11\x88\x1b\xb9'

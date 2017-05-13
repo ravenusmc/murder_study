@@ -43,3 +43,37 @@
     padding: 10px 10px 10px 10px;
     border-radius: 5px;
 }
+
+/* CSS for index Page */
+
+.index_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_section {
+    display: flex;
+    flex-direction: row;
+    height: 685px;
+    justify-content: center;
+}
+
+.nav_bar {
+    flex: 5;
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.nav_pic {
+    flex: 5;
+    background-image: url(https://source.unsplash.com/opuSVZbNLGg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
