@@ -1,15 +1,59 @@
-<div>
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!-- <div>
     <div>
         <h1>Welcome to the News App</h1>
         {% for message in get_flashed_messages() %}
             <h1>{{ message }}</h1>
         {% endfor %}
         <p class='center'>Sign Up Page</p>
-        <form class='login_form' onsubmit='return validateForm();' method="post">
+        <form class='login_form' action='/' onsubmit='return validateForm();' method="post">
             <p>Username: <input type=text name=username placeholder="Username">
             <p>Password: <input type=password name=password placeholder="Password" /></p>
             <p>Password: <input type=password name=second_password placeholder="Password Check" /></p>
             <p><input type=submit value=Sign_Up>
         </form>
     <div>
-</div>
+</div> -->
+
+<div id="container"></div>
+
+<script src="{{ url_for('static', filename='./bower_components/react/react.min.js') }}"></script>
+<script src="{{ url_for('static', filename='./bower_components/react/JSXTransformer.js') }}"></script>
+
+<script type="text/jsx">
+
+  var Main = React.createClass({
+    render: function () {
+      return (
+            <div className='signUp_main'>
+                <div className='signUp_container'>
+                    <h1>Welcome to Murder Study</h1>
+                    {% for message in get_flashed_messages() %}
+                        <h1>{{ message }}</h1>
+                    {% endfor %}
+                    <p className='center'>Sign Up Page</p>
+                    <form className='login_form' action='/' onsubmit='return validateForm();' method="post">
+                        <p>Username: <input name='username' type='text'/></p>
+                        <p>Password: <input name='password' type='password'/></p>
+                        <p>Password: <input name='second_password' type='password'/></p>
+                        <input type='submit'/>
+                    </form>
+                </div>
+            </div>
+        );
+    }
+  });
+
+  React.render(
+    <Main/>,
+    document.getElementById('container')
+  );
+</script>
+
+
+
+
+{% endblock %}

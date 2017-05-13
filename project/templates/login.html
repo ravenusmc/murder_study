@@ -41,9 +41,11 @@
                 <h1 className='center'>Login Form</h1>
                 <form onsubmit='return validateForm();' method="POST">
                     <p>Username: <input name='username' type='text'/></p>
-                    <p>Password: <input name='password' type='text'/></p>
-                    <input type='submit'/>
-                    <button>Sign Up</button>
+                    <p>Password: <input name='password' type='password'/></p>
+                    <div className="input_area">
+                        <input type='submit'/>
+                        <button><a href='/sign_up'>Sign Up</a></button>
+                    </div>
                 </form>
                 </div>
               </div>

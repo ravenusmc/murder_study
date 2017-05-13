@@ -18,6 +18,7 @@ def login():
         user = User(username)
         #Now checking to see if the user is in the database.
         flag = user.check(username, password)
+        #Conditional statement to test if the user is a member of the site.
         if flag == True:
             #If the user is in the database, the user gets sent to the index page.
             session['username'] = request.form['username']
@@ -52,7 +53,16 @@ def sign_up():
 
 @app.route('/index')
 def index():
+    if 'username' not in session:
+        return redirect(url_for('login'))
     return render_template('index.html', title="Home Page")
+
+#This function is what will log out the user.
+@app.route('/sign_out')
+def logout():
+    # remove the username from the session if it's there
+    session.pop('username', None)
+    return redirect(url_for('login'))
 
 # set the secret key. keep this really secret:
 app.secret_key = 'n3A\xef(\xb0Cf^\xda\xf7\x97\xb1x\x8e\x94\xd5r\xe0\x11\x88\x1b\xb9'
