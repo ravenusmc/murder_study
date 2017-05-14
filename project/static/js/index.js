@@ -4,7 +4,7 @@ $(function() {
       $.getJSON($SCRIPT_ROOT + '/_by_year', {
         year: $('input[name="year_value"]').val()
       }, function(data) {
-        $('#results').text(data.result);
+        $('#results').text('There were ' + data.result + '' + ' murders in the year you entered.');
         $('input[name=year_value]').focus().select();
       });
       return false;
