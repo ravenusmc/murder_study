@@ -19,3 +19,10 @@ class Data():
         self.__data = pd.read_csv('project/murder.csv', low_memory=False)
         count = len(self.__data[self.__data.State == state])
         return count
+
+    #This method will return the number of murders that occurred in the state and
+    #year that the user entered.
+    def by_state_year(self, state, year):
+        self.__data = pd.read_csv('project/murder.csv', low_memory=False)
+        count = len(self.__data[(self.__data.State == state) & (self.__data.Year == year)])
+        return count

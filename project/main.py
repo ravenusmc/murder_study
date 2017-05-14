@@ -88,6 +88,23 @@ def by_state():
     #Returning the state count back to the user.
     return jsonify(result = state_count)
 
+#This function looks at the murders by both state and year
+@app.route('/_by_state_year')
+def by_state_year():
+    #Creating an object that will be used to analyze data by the year
+    data = Data()
+    #These next two lines pull the data from what the user entered
+    state = request.args.get('state_name', 0, type=str)
+    year = request.args.get('year_two', 0, type=int)
+    #Using the .title method to ensure that states with two words appear the
+    #same as they are in the csv
+    state = state.title()
+    #Calling the by_state_year method in the data.py file to get the number of
+    #murders for the data that was entered. 
+    state_year_count = data.by_state_year(state, year)
+    #Returning the state count back to the user.
+    return jsonify(result = state_year_count)
+
 @app.route('/_add_numbers')
 def add_numbers():
     a = request.args.get('a', 0, type=int)

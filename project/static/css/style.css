@@ -145,6 +145,21 @@ ul li a {
     background-position: center;
 }
 
+/* Fourth Area CSS */
+.area_one_fourth {
+    flex: 5;
+    background-image: url(https://source.unsplash.com/2qYeqdDBAqQ);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.area_two_fourth {
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @media only all and (max-width: 768px){
 

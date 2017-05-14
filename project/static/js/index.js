@@ -28,6 +28,22 @@ $(function() {
     $('a#state').bind('click', submit_form);
 });
 
+//Code to calculate murders in a given state and year
+$(function() {
+    var submit_form = function(e) {
+      $.getJSON($SCRIPT_ROOT + '/_by_state_year', {
+        state_name: $('input[name="state_name_two"]').val(),
+        year_two: $('input[name="year_two"]').val()
+      }, function(data) {
+        $('#state_year_results').text('There were ' + data.result + '' + ' murders in the state and year you entered.');
+        $('input[name=state_name_two]').focus().select();
+      });
+      return false;
+    };
+
+    $('a#state_year').bind('click', submit_form);
+});
+
 //EXAMPLE
 $(function() {
   var submit_form = function(e) {
