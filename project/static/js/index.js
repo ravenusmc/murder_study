@@ -13,6 +13,21 @@ $(function() {
     $('a#year').bind('click', submit_form);
 });
 
+//Code to calculate murders in a given state
+$(function() {
+    var submit_form = function(e) {
+      $.getJSON($SCRIPT_ROOT + '/_by_state', {
+        state: $('input[name="state_name"]').val()
+      }, function(data) {
+        $('#state_results').text('There were ' + data.result + '' + ' murders in the state you entered.');
+        $('input[name=state_name]').focus().select();
+      });
+      return false;
+    };
+
+    $('a#state').bind('click', submit_form);
+});
+
 //EXAMPLE
 $(function() {
   var submit_form = function(e) {

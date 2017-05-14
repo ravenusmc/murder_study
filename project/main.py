@@ -34,6 +34,7 @@ def login():
             return redirect(url_for('sign_up'))
     return render_template('login.html', title='Login Page')
 
+#This function brings the user to the sign up page
 @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':
@@ -55,12 +56,14 @@ def sign_up():
         return redirect(url_for('index'))
     return render_template('sign_up.html', title='Sign Up Page')
 
+#This function brings the user to the home page
 @app.route('/index')
 def index():
     if 'username' not in session:
         return redirect(url_for('login'))
     return render_template('index.html', title="Home Page")
 
+#This function looks at the murders by year
 @app.route('/_by_year')
 def by_year():
     #Creating an object that will be used to analyze data by the year
@@ -69,6 +72,21 @@ def by_year():
     year = request.args.get('year', 0, type=int)
     year = data.by_year(year)
     return jsonify(result = year)
+
+#This function looks at the murders by state
+@app.route('/_by_state')
+def by_state():
+    #Creating an object that will be used to analyze data by the year
+    data = Data()
+    #pulling the data from what the user entered
+    state = request.args.get('state', 0, type=str)
+    #Capitalizing the state name to ensure that it matches what is in the csv file
+    state = state.title()
+    #Returning the murder count in the state by using the by_state method in the
+    #data.py file.
+    state_count = data.by_state(state)
+    #Returning the state count back to the user.
+    return jsonify(result = state_count)
 
 @app.route('/_add_numbers')
 def add_numbers():
