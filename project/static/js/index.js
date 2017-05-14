@@ -2,10 +2,10 @@
 $(function() {
     var submit_form = function(e) {
       $.getJSON($SCRIPT_ROOT + '/_by_year', {
-        a: $('input[name="year"]').val()
+        year: $('input[name="year_value"]').val()
       }, function(data) {
         $('#results').text(data.result);
-        $('input[name=year]').focus().select();
+        $('input[name=year_value]').focus().select();
       });
       return false;
     };

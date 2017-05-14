@@ -1,8 +1,12 @@
 #importing outside libraries for use in the project
 from flask import Flask, session, jsonify, redirect, url_for, escape, render_template, request, flash
+import matplotlib.pyplot as plt, mpld3
+import numpy as np
+import pandas as pd
 
 #importing files that I made for the program
 from client import *
+from data import *
 
 #Setting up Flask
 app = Flask(__name__)
@@ -59,17 +63,18 @@ def index():
 
 @app.route('/_by_year')
 def by_year():
-    print("IN FUNCTION")
-    a = request.args.get('a', 0, type=int)
-    b = 3
-    print(a)
-    return jsonify(result=a + b)
+    #Creating an object that will be used to analyze data by the year
+    data = Data()
+    #pulling the data from what the user entered
+    year = request.args.get('year', 0, type=int)
+    year = data.by_year(year)
+    return jsonify(result = year)
 
 @app.route('/_add_numbers')
 def add_numbers():
     a = request.args.get('a', 0, type=int)
     b = request.args.get('b', 0, type=int)
-    return jsonify(result=a + b)
+    return jsonify(result = a + b)
 
 #This function is what will log out the user.
 @app.route('/sign_out')

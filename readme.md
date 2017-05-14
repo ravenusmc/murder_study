@@ -3,7 +3,7 @@
 
 Yes, this project looks at a murder dataset. The data comes from Kaggle:
 https://www.kaggle.com/murderaccountability/homicide-reports. The site says that
-the data covers murders in the U.S. from 1980 to 2014.
+the data covers murders in the U.S. from 2011 to 2014.
 
 I will admit that I wanted to use this dataset months ago but moved onto other
 projects. I decided to come back to it and make a website that will provide some
