@@ -100,11 +100,18 @@ def by_state_year():
     #same as they are in the csv
     state = state.title()
     #Calling the by_state_year method in the data.py file to get the number of
-    #murders for the data that was entered. 
+    #murders for the data that was entered.
     state_year_count = data.by_state_year(state, year)
     #Returning the state count back to the user.
     return jsonify(result = state_year_count)
 
+#This function will take the user to the graph page
+@app.route('/graphs')
+def graphs():
+    return render_template('graph.html', title="Graph Page")
+
+
+#EXAMPLE FUNCTION NEED TO TAKE THIS OUT
 @app.route('/_add_numbers')
 def add_numbers():
     a = request.args.get('a', 0, type=int)

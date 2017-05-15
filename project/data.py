@@ -1,5 +1,4 @@
-
-#This file will hold the class that will manipulate the data from data.csv file.
+#This file will hold the class that will manipulate the data from murder.csv file.
 
 #Importing files that will be used for the project
 import numpy as np
