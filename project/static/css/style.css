@@ -2,13 +2,14 @@
 
 .center {
     text-align: center;
+    color: #333;
 }
 
 footer {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-top: 3px solid black;
+  border-top: 3px solid #333;
 }
 
 /* CSS For Login Page */
@@ -88,9 +89,13 @@ footer {
     justify-content: center;
 }
 
+.page_title {
+    font-size: 45px;
+}
+
 .nav_bar {
     flex: 5;
-    font-size: 45px;
+    font-size: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,6 +108,11 @@ ul li {
 ul li a {
     text-decoration: none;
     color: black;
+}
+
+ul li a:hover {
+    background-color: #333;
+    color: white;
 }
 
 .nav_pic {
@@ -182,6 +192,30 @@ ul li a {
         border-radius: 5px;
         margin-top: 150px;
         margin-bottom: 150px;
+    }
+
+    .page_title {
+        font-size: 25px;
+    }
+
+    .nav_bar {
+        flex: 5;
+        font-size: 20px;
+        line-height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_section {
+        display: flex;
+        flex-direction: column;
+        height: 685px;
+        justify-content: center;
+    }
+
+    .area_one_third {
+        border-top: 3px solid #333;
     }
 
 }
