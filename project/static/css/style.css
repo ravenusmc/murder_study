@@ -171,6 +171,12 @@ ul li a:hover {
     align-items: center;
 }
 
+/* CSS for Graph Page */
+img {
+  height: 500px;
+  width: 1000px;
+}
+
 @media only all and (max-width: 768px){
 
     .main_div {
