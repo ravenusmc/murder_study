@@ -44,6 +44,21 @@ $(function() {
     $('a#state_year').bind('click', submit_form);
 });
 
+//This Jquery code will attach the navbar to the screen when the browser
+//pases a certain limit
+$(document).ready(function() {
+  $(window).scroll(function () {
+    //   console.log($(window).scrollTop())
+    if ($(window).scrollTop() >= 115) {
+      $('.graph_nav').addClass('navbar-fixed');
+    }
+    if ($(window).scrollTop() < 115 ) {
+      $('.graph_nav').removeClass('navbar-fixed');
+      console.log('Fixed Applied');
+    }
+  });
+});
+
 //EXAMPLE
 $(function() {
   var submit_form = function(e) {
