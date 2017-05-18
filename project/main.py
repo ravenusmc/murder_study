@@ -110,12 +110,23 @@ def by_state_year():
 def by_sex():
     #Creating an object that will be used to analyze data by the year
     data = Data()
+    #Creating a list to hold my three variables in.
+    data_list = []
+    #Getting the data that the user entered
     sex_one = request.args.get('sex_one', 0, type=str)
     sex_two = request.args.get('sex_two', 0, type=str)
+    #I have to ensure that male and female are uppercase.
     sex_one = sex_one.title()
     sex_two = sex_two.title()
+    #Calling the by_sex method to find the data that I need
     count = data.by_sex(sex_one, sex_two)
-    return jsonify(result = count)
+    #Appending all three of my variables to the list-may be better way to do
+    #this
+    data_list.append(sex_one)
+    data_list.append(sex_two)
+    data_list.append(count)
+    #Returning the result
+    return jsonify(result = data_list)
 
 #This function will take the user to the graph page
 @app.route('/graphs')

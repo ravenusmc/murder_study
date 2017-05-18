@@ -51,9 +51,7 @@ $(function() {
         sex_one: $('input[name="sex_one"]').val(),
         sex_two: $('input[name="sex_two"]').val()
       }, function(data) {
-          console.log(data)
-        $('#sex_results').text('There were ' + data.result + '' + ' murders committed by the sex you entered.');
-        // $('input[name=year_value]').focus().select();
+        $('#sex_results').text(data.result[2] + '' + ' murders were committed by ' + data.result[0] + 's' + ' ' + 'on ' + data.result[1] + 's');
       });
       return false;
     };
