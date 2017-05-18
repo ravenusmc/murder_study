@@ -171,7 +171,29 @@ ul li a:hover {
     align-items: center;
 }
 
+/* Fifth Area */
+.area_one_fifth {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.area_two_fifth {
+    flex: 5;
+    background-image: url(https://source.unsplash.com/2ogkxH66ljU);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 /* CSS for Graph Page */
+.wrapper {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 .graph_header {
     color: #333;
     font-family: 'Lato', sans-serif;

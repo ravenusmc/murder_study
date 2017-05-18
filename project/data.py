@@ -25,3 +25,9 @@ class Data():
         self.__data = pd.read_csv('project/murder.csv', low_memory=False)
         count = len(self.__data[(self.__data.State == state) & (self.__data.Year == year)])
         return count
+
+    #This method will return the number of murders that occurred between the sex's
+    def by_sex(self, sex_one, sex_two):
+        self.__data = pd.read_csv('project/murder.csv', low_memory=False)
+        count = len(self.__data[(self.__data.Perpetrator_Sex == sex_one) & (self.__data.Victim_Sex == sex_two)])
+        return count

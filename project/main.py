@@ -105,6 +105,18 @@ def by_state_year():
     #Returning the state count back to the user.
     return jsonify(result = state_year_count)
 
+#This function looks at the sex's of the victims and the Perpetrator.
+@app.route('/_by_sex')
+def by_sex():
+    #Creating an object that will be used to analyze data by the year
+    data = Data()
+    sex_one = request.args.get('sex_one', 0, type=str)
+    sex_two = request.args.get('sex_two', 0, type=str)
+    sex_one = sex_one.title()
+    sex_two = sex_two.title()
+    count = data.by_sex(sex_one, sex_two)
+    return jsonify(result = count)
+
 #This function will take the user to the graph page
 @app.route('/graphs')
 def graphs():

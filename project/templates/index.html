@@ -13,6 +13,7 @@
                     <li><a href='#year_section'>By Year</a></li>
                     <li><a href='#state_area'>By State</a></li>
                     <li><a href='#state_year'>By State and Year</a></li>
+                    <li><a href='#by_sex'>By Sex</a></li>
                     <li><a href='/graphs'>Graphs</a></li>
                     <li><a href="/sign_out">Sign Out</a></li>
                 </ul>
@@ -69,7 +70,37 @@
             </div>
         </div>
     </div><!-- End of header_section div -->
-    <!-- End of third Section -->
+    <!-- End of fourth Section -->
+
+    <!-- Start of fifth Section -->
+    <div id='by_sex' class='header_section'><!-- start of header_section div -->
+        <div class='area_one_fifth'>
+            <div>
+                <h1 class='center'>Murders by Sex</h1>
+                <label for='sex'>Please choose sex of murder:</label>
+                <input type='text' name='sex_one' list='sex_one'>
+                    <datalist id='sex_one'>
+                        <option value='male' label='male'>
+                        <option value='female' label='female'>
+                    </datalist>
+            </div>
+            <div>
+                <label for='sex'>Please choose sex of victim:</label>
+                <input type='text' name='sex_two' list='sex_two'>
+                    <datalist id='sex_two'>
+                        <option value='male' label='male'>
+                        <option value='female' label='female'>
+                    </datalist>
+            </div>
+            <div>
+                <p>Result: <span id="sex_results">?</span></p>
+                <p><a href=# id="sex">Calculate by Sex</a></p>
+            </div>
+        </div>
+        <div class='area_two_fifth'>
+        </div>
+    </div><!-- End of header_section div -->
+    <!-- End of fifth Section -->
 
     <!-- Footer Section -->
     <footer>

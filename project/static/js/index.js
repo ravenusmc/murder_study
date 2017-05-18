@@ -44,6 +44,24 @@ $(function() {
     $('a#state_year').bind('click', submit_form);
 });
 
+//Code to look at murders by sex.
+$(function() {
+    var submit_form = function(e) {
+      $.getJSON($SCRIPT_ROOT + '/_by_sex', {
+        sex_one: $('input[name="sex_one"]').val(),
+        sex_two: $('input[name="sex_two"]').val()
+      }, function(data) {
+          console.log(data)
+        $('#sex_results').text('There were ' + data.result + '' + ' murders committed by the sex you entered.');
+        // $('input[name=year_value]').focus().select();
+      });
+      return false;
+    };
+
+    $('a#sex').bind('click', submit_form);
+
+});
+
 //This Jquery code will attach the navbar to the screen when the browser
 //pases a certain limit
 $(document).ready(function() {
