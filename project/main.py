@@ -131,15 +131,10 @@ def by_sex():
 #This function will take the user to the graph page
 @app.route('/graphs')
 def graphs():
+    if 'username' not in session:
+        return redirect(url_for('login'))
     return render_template('graph.html', title="Graph Page")
 
-
-#EXAMPLE FUNCTION NEED TO TAKE THIS OUT
-@app.route('/_add_numbers')
-def add_numbers():
-    a = request.args.get('a', 0, type=int)
-    b = request.args.get('b', 0, type=int)
-    return jsonify(result = a + b)
 
 #This function is what will log out the user.
 @app.route('/sign_out')
