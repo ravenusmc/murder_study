@@ -135,7 +135,6 @@ def graphs():
         return redirect(url_for('login'))
     return render_template('graph.html', title="Graph Page")
 
-
 #This function is what will log out the user.
 @app.route('/sign_out')
 def logout():

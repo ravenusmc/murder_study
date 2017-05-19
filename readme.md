@@ -47,6 +47,6 @@ project and I could have done a lot more with it.
 
 # Preview
 
-To see a video that talks about this project please go here: Coming Soon
+To see a video that talks about this project please go here: https://www.youtube.com/watch?v=3prEmoyck0Y&feature=em-upload_owner
 
-Blog entry: Coming Soon
+Blog entry: https://codingsaga.wordpress.com/2017/05/19/murder-study-finshed/
