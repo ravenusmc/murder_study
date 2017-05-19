@@ -29,7 +29,5 @@ class Data():
     #This method will return the number of murders that occurred between the sex's
     def by_sex(self, sex_one, sex_two):
         self.__data = pd.read_csv('project/murder.csv', low_memory=False)
-        #I am not sure but feel that the data returned here has a bug-the numbers
-        #that I get appear to low. 
         count = len(self.__data[(self.__data.Perpetrator_Sex == sex_one) & (self.__data.Victim_Sex == sex_two)])
         return count
